@@ -33,9 +33,9 @@
 
 <div class="container-fluid no-print">
     <div class="d-flex justify-content-between align-items-center mb-3">
-        <h4 class="fw-bold text-primary">🏗️ إضافة وتعديل المشاريع </h4>
+        <h4 class="fw-bold text-primary">🏗️ إضافة وتعديل المشاريع / المحاضر</h4>
         <div class="d-flex w-50">
-            <input type="text" id="searchInput" onkeyup="filter()" class="form-control border-primary me-2" placeholder="🔍 ابحث عن اسم مشروع...">
+            <input type="text" id="searchInput" onkeyup="filter()" class="form-control border-primary me-2" placeholder="🔍 ابحث عن اسم مشروع أو محضر جلسة...">
             <button onclick="window.print()" class="btn btn-dark w-25">🖨️ طباعة التقارير</button>
         </div>
     </div>
@@ -43,8 +43,8 @@
     <div class="card p-3 shadow-sm border-primary">
         <input type="hidden" id="editId">
         <div class="row g-2">
-            <div class="col-md-4"><label class="form-label">اسم المشروع </label><textarea id="n" class="form-control"></textarea></div>
-            <div class="col-md-3"><label class="form-label">المقاول </label><textarea id="c" class="form-control"></textarea></div>
+            <div class="col-md-4"><label class="form-label">اسم المشروع / الجلسة</label><textarea id="n" class="form-control"></textarea></div>
+            <div class="col-md-3"><label class="form-label">المقاول / الحاضرون</label><textarea id="c" class="form-control"></textarea></div>
             <div class="col-md-2"><label class="form-label">مدة الإنجاز (يوم)</label><input type="number" id="dur" class="form-control"></div>
             <div class="col-md-1"><label class="form-label">كلفة</label><input type="number" id="tot" class="form-control"></div>
             <div class="col-md-1"><label class="form-label">مدفوع</label><input type="number" id="paid" class="form-control"></div>
@@ -104,8 +104,8 @@
 
                         <div class="section-title">أولاً: المعطيات العامة</div>
                         <table class="v-table">
-                            <tr><th>اسم المشروع</th><td class="fw-bold text-primary">${p.name}</td></tr>
-                            <tr><th>المقاول / مكتب الدراسات </th><td>${p.c}</td></tr>
+                            <tr><th>اسم المشروع / محضر الجلسة</th><td class="fw-bold text-primary">${p.name}</td></tr>
+                            <tr><th>المقاول / مكتب الدراسات / الحاضرون</th><td>${p.c}</td></tr>
                             <tr><th>مدة الإنجاز التعاقدية</th><td>${p.dur || '---'} يوماً</td></tr>
                             <tr><th>تاريخ إذن البداية الإداري</th><td>${p.d_s || '---'}</td></tr>
                             <tr><th>تاريخ إذن التوقف (إن وجد)</th><td>${p.d_p || '---'}</td></tr>
