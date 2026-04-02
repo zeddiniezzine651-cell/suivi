@@ -178,7 +178,16 @@
     }
 }; 
 
-    window.del = (k) => { if(confirm("حذف المشروع نهائياً؟")) remove(ref(db, 'projects_vFinal/'+k)); };
+   window.del = (k) => {
+    // طلب كلمة السر قبل الحذف
+    if (prompt("الرجاء إدخال كلمة السر للحذف:") === "1324") {
+        if (confirm("هل أنت متأكد من حذف هذا المشروع نهائياً؟")) {
+            remove(ref(db, 'projects_vFinal/' + k));
+        }
+    } else {
+        alert("كلمة السر خاطئة! لا يمكن الحذف. ❌");
+    }
+}; 
     window.resetForm = () => { location.reload(); };
     window.filter = () => {
         let val = document.getElementById('searchInput').value.toLowerCase();
